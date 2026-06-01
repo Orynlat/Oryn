@@ -363,6 +363,15 @@ em{ font-style:italic; }
   padding-bottom:3px; transition:color .2s, border-color .2s;
 }
 .footer__url:hover{ color:#fff; border-color:#fff; }
+.footer__social{ display:flex; gap:14px; justify-content:center; margin-top:26px; flex-wrap:wrap; }
+.social{
+  display:inline-flex; align-items:center; gap:9px;
+  font-family:var(--mono); font-size:13px; color:#d8cfc0;
+  border:1px solid rgba(245,241,234,.25); border-radius:999px; padding:9px 18px;
+  transition:background .2s, color .2s, border-color .2s, transform .15s;
+}
+.social:hover{ background:var(--bg); color:var(--paper-dark); border-color:var(--bg); transform:translateY(-2px); }
+.social svg{ display:block; width:17px; height:17px; }
 .footer__meta{
   display:flex; justify-content:center; gap:30px; flex-wrap:wrap;
   margin-top:48px; padding-top:24px; border-top:1px solid rgba(245,241,234,.15);

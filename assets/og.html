@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<style>
+  html,body{ margin:0; }
+  .card{
+    width:1200px; height:630px; box-sizing:border-box;
+    background:#F5F1EA; color:#111111; position:relative; overflow:hidden;
+    padding:84px 90px; display:flex; flex-direction:column; justify-content:center;
+    font-family:Georgia,'Times New Roman',serif;
+  }
+  .kicker{
+    font-family:'Courier New',monospace; font-size:20px; letter-spacing:5px;
+    color:#555; text-transform:uppercase; display:flex; align-items:center; gap:14px;
+    margin-bottom:18px;
+  }
+  .dot{ width:14px; height:14px; border-radius:50%; background:#3a7d44; }
+  .wm{ font-size:188px; font-weight:700; letter-spacing:-6px; line-height:.9; margin:0; }
+  .tag{ font-style:italic; font-size:46px; margin:14px 0 0; }
+  .triplet{ font-family:'Courier New',monospace; font-size:24px; letter-spacing:3px; color:#555; margin-top:30px; }
+  .url{
+    position:absolute; right:90px; bottom:70px;
+    font-family:'Courier New',monospace; font-size:22px; color:#111;
+    border-bottom:2px solid #b8af9f; padding-bottom:4px;
+  }
+  /* hand-drawn nodes */
+  svg.nodes{ position:absolute; right:60px; top:60px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <svg class="nodes" width="360" height="300" viewBox="0 0 360 300" fill="none">
+      <g stroke="#111" stroke-width="2.5" stroke-linecap="round">
+        <circle cx="120" cy="80" r="34"/>
+        <circle cx="300" cy="50" r="22"/>
+        <circle cx="240" cy="210" r="42"/>
+        <circle cx="70" cy="220" r="18"/>
+        <circle cx="330" cy="170" r="15"/>
+      </g>
+      <g stroke="#111" stroke-width="1.6" stroke-dasharray="5 6" opacity=".55">
+        <path d="M152 80 C 220 60, 270 55, 280 52"/>
+        <path d="M270 75 C 260 130, 255 165, 252 170"/>
+        <path d="M100 105 C 80 150, 72 185, 70 202"/>
+      </g>
+    </svg>
+
+    <div class="kicker"><span class="dot"></span> An open research initiative</div>
+    <h1 class="wm">ORYN</h1>
+    <div class="tag">The Coordination Layer for Base.</div>
+    <div class="triplet">Identity &nbsp;·&nbsp; Reputation &nbsp;·&nbsp; Coordination</div>
+    <div class="url">oryn.lat</div>
+  </div>
+</body>
+</html>
