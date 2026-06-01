@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Research #001 — Identity Systems — ORYN</title>
+<meta name="description" content="ORYN Research #001: Identity Systems. Portable, participant-owned identity as the foundation of a coordination layer for Base." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">ORYN<span class="nav__dot">●</span></a>
+    <nav class="nav__links">
+      <a href="docs.html">Docs</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="identity.html">Identity</a>
+      <a href="reputation.html">Reputation</a>
+      <a href="graph.html">Graph</a>
+      <a href="github.html">Github</a>
+    </nav>
+    <a href="index.html" class="nav__cta">← Home</a>
+  </div>
+</header>
+
+<main class="page">
+  <header class="phead">
+    <div class="breadcrumb"><a href="index.html">ORYN</a> <span>/</span> Research <span>/</span> #001</div>
+    <h1 class="phead__title">Identity Systems</h1>
+    <p class="phead__lead">How a coordination layer establishes who a participant is — portable, persistent, and owned by the participant rather than the application.</p>
+    <div class="phead__meta"><span>Research #001</span><span>Track: Identity</span><span>Status: open</span></div>
+  </header>
+
+  <article class="prose">
+    <p class="lede">Abstract — A coordination layer is only as strong as its notion of identity. This track studies how to give people, projects, communities, assets, and agents a single portable presence on Base, and what it takes for that presence to be durable without a central authority.</p>
+
+    <h2>Motivation</h2>
+    <p>Application-bound identity is the root cause of fragmentation. When every app mints its own accounts, nothing a participant builds in one place follows them to the next. We ask: what is the minimal, portable identity that every other primitive — reputation, graph — can safely build on?</p>
+
+    <h2>Questions</h2>
+    <ul>
+      <li>What is the canonical representation of an identity that is cheap to resolve and hard to forge?</li>
+      <li>How are identities for non-human participants — assets and autonomous agents — created and controlled?</li>
+      <li>How do recovery, delegation, and key rotation work without reintroducing a trusted intermediary?</li>
+      <li>Where is the line between a portable, useful profile and participant privacy?</li>
+    </ul>
+
+    <h2>Approach</h2>
+    <p>We treat identity as an addressable root on Base with an attachable, participant-controlled profile. The root is durable and minimal; the profile is rich and revocable. We study existing naming, attestation, and account-abstraction designs and evaluate each against four tests: portability, resistance to forgery, recoverability, and privacy.</p>
+    <table class="spec">
+      <tr><th>Unit of study</th><td>The participant identity and its resolution path.</td></tr>
+      <tr><th>Feeds primitive</th><td><a class="inline" href="identity.html">Identity</a> (Phase 1 — Registry, Profiles).</td></tr>
+      <tr><th>Evaluation</th><td>Portability · Forgery-resistance · Recoverability · Privacy.</td></tr>
+    </table>
+
+    <div class="note">
+      <span class="note__k">Working claim</span>
+      <p>Identity must be owned by the participant and resolvable by any application — created once, legible everywhere, with no re-onboarding at the border.</p>
+    </div>
+
+    <h2>What it unlocks</h2>
+    <p>A portable identity is the substrate the rest of the coordination layer stands on. Reputation needs something to attach to; the graph needs nodes to connect. Settle identity, and both become possible.</p>
+
+    <h2>Status</h2>
+    <p>Open. This research informs the Phase 1 registry. Findings and drafts are published in <a class="inline" href="github.html">oryn-docs</a> as they mature.</p>
+  </article>
+
+  <nav class="related">
+    <h2>More research</h2>
+    <div class="related__grid">
+      <a class="rcard" href="research-002.html"><span class="k">Research #002</span><h3>Reputation Networks</h3><p>Trust as an earned, contextual signal.</p></a>
+      <a class="rcard" href="research-003.html"><span class="k">Research #003</span><h3>Coordination Graphs</h3><p>Relationships as shared infrastructure.</p></a>
+      <a class="rcard" href="identity.html"><span class="k">Primitive i</span><h3>Identity</h3><p>The primitive this research feeds.</p></a>
+    </div>
+  </nav>
+</main>
+
+<footer class="footer">
+  <div class="footer__brand">ORYN<span class="nav__dot">●</span></div>
+  <p class="footer__tag">The Coordination Layer for Base.</p>
+  <a href="https://oryn.lat" class="footer__url">oryn.lat</a>
+  <div class="footer__meta"><span>© ORYN</span><span>Building on Base</span></div>
+</footer>
+</body>
+</html>

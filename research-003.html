@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Research #003 — Coordination Graphs — ORYN</title>
+<meta name="description" content="ORYN Research #003: Coordination Graphs. Relationships as shared infrastructure, and the network theory of discovery on Base." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">ORYN<span class="nav__dot">●</span></a>
+    <nav class="nav__links">
+      <a href="docs.html">Docs</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="identity.html">Identity</a>
+      <a href="reputation.html">Reputation</a>
+      <a href="graph.html">Graph</a>
+      <a href="github.html">Github</a>
+    </nav>
+    <a href="index.html" class="nav__cta">← Home</a>
+  </div>
+</header>
+
+<main class="page">
+  <header class="phead">
+    <div class="breadcrumb"><a href="index.html">ORYN</a> <span>/</span> Research <span>/</span> #003</div>
+    <h1 class="phead__title">Coordination Graphs</h1>
+    <p class="phead__lead">How relationships become shared infrastructure — and how the structure of a network enables discovery, trust paths, and coordination at scale.</p>
+    <div class="phead__meta"><span>Research #003</span><span>Track: Coordination · Network Theory</span><span>Status: open</span></div>
+  </header>
+
+  <article class="prose">
+    <p class="lede">Abstract — When relationships are trapped inside individual applications, the ecosystem cannot see itself. This track studies the coordination graph as shared infrastructure, and the network theory that turns a map of connections into discovery and trust.</p>
+
+    <h2>Motivation</h2>
+    <p>Coordination is a structural property. Whether two participants can find and trust each other depends on the shape of the network between them. We study what edges are primitive, how discovery works over a shared graph, and how trust attenuates along a path.</p>
+
+    <h2>Questions</h2>
+    <ul>
+      <li>Which edge types are primitive, and which can be derived from others?</li>
+      <li>How does discovery work efficiently over a large, evolving graph?</li>
+      <li>How does trust attenuate along a path without losing its signal?</li>
+      <li>How do we balance an open, legible graph with participant control over visibility?</li>
+    </ul>
+
+    <h2>Approach</h2>
+    <p>We model the ecosystem as a typed, directional graph whose nodes are <a class="inline" href="identity.html">identities</a> and whose edges encode relationships such as <em>contributes_to</em>, <em>belongs_to</em>, and <em>vouches_for</em>. We borrow from network theory — centrality, clustering, bridges, path length — to ask which structural signals are useful for discovery and for routing trust.</p>
+    <div class="codeblock"><span class="c">// conceptual — structural queries on the graph</span>
+graph.<span class="k">neighbors</span>(p, edge: "contributor");
+graph.<span class="k">path</span>(a, b);            <span class="c">// trust path</span>
+graph.<span class="k">clusters</span>(around: p);   <span class="c">// communities</span>
+graph.<span class="k">bridges</span>();            <span class="c">// cross-scene connectors</span></div>
+    <table class="spec">
+      <tr><th>Unit of study</th><td>Typed edges and the structural queries over them.</td></tr>
+      <tr><th>Feeds primitive</th><td><a class="inline" href="graph.html">Graph</a> (Phase 3 — Relationships, Discovery).</td></tr>
+      <tr><th>Draws on</th><td>Network theory — centrality, clustering, path analysis.</td></tr>
+    </table>
+
+    <div class="note">
+      <span class="note__k">Working claim</span>
+      <p>Coordination is structural. Lift relationships into a shared graph and discovery, trust routing, and collaboration become first-class capabilities of the ecosystem.</p>
+    </div>
+
+    <h2>What it unlocks</h2>
+    <p>A shared coordination graph is what finally lets participants find each other across application borders — the precondition for the coordination ORYN exists to enable.</p>
+
+    <h2>Status</h2>
+    <p>Open. This research informs the Phase 3 graph and the eventual Phase 4 protocol.</p>
+  </article>
+
+  <nav class="related">
+    <h2>More research</h2>
+    <div class="related__grid">
+      <a class="rcard" href="research-001.html"><span class="k">Research #001</span><h3>Identity Systems</h3><p>The nodes of the graph.</p></a>
+      <a class="rcard" href="research-002.html"><span class="k">Research #002</span><h3>Reputation Networks</h3><p>The trust the graph carries.</p></a>
+      <a class="rcard" href="graph.html"><span class="k">Primitive iii</span><h3>Graph</h3><p>The primitive this research feeds.</p></a>
+    </div>
+  </nav>
+</main>
+
+<footer class="footer">
+  <div class="footer__brand">ORYN<span class="nav__dot">●</span></div>
+  <p class="footer__tag">The Coordination Layer for Base.</p>
+  <a href="https://oryn.lat" class="footer__url">oryn.lat</a>
+  <div class="footer__meta"><span>© ORYN</span><span>Building on Base</span></div>
+</footer>
+</body>
+</html>

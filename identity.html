@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Identity — ORYN Primitive i</title>
+<meta name="description" content="ORYN Identity: persistent participation across applications. A portable, participant-owned presence on Base." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">ORYN<span class="nav__dot">●</span></a>
+    <nav class="nav__links">
+      <a href="docs.html">Docs</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="identity.html">Identity</a>
+      <a href="reputation.html">Reputation</a>
+      <a href="graph.html">Graph</a>
+      <a href="github.html">Github</a>
+    </nav>
+    <a href="index.html" class="nav__cta">← Home</a>
+  </div>
+</header>
+
+<main class="page">
+  <header class="phead">
+    <div class="breadcrumb"><a href="index.html">ORYN</a> <span>/</span> <a href="docs.html">Primitives</a> <span>/</span> Identity</div>
+    <h1 class="phead__title">Identity</h1>
+    <p class="phead__lead">Persistent participation across applications. One portable presence that a participant owns and carries with them everywhere on Base.</p>
+    <div class="phead__meta"><span>Primitive i</span><span>Phase 1</span><span>Registry · Profiles</span></div>
+  </header>
+
+  <article class="prose">
+    <p class="lede">Identity is the anchor of the coordination layer. Before trust can be earned or relationships can be drawn, there must be a stable answer to a simple question: who is this participant?</p>
+
+    <h2>The problem with logins</h2>
+    <p>In the application-centric world, identity is a side effect of an account. You exist inside an app because that app created a row for you. Leave the app and the identity is gone. The next app starts you over — new profile, new history, new zero.</p>
+    <p>ORYN inverts this. Identity belongs to the <strong>participant</strong>, not the application. It is created once and resolved everywhere. Applications read it; they do not own it.</p>
+
+    <h2>What an identity is</h2>
+    <p>An ORYN identity is a persistent presence with a stable address on Base. It is not limited to humans — the coordination layer treats five kinds of participant as first-class:</p>
+    <div class="fgrid">
+      <div class="f"><span class="n">01</span><h4>People</h4><p>Individuals who build, contribute, and govern.</p></div>
+      <div class="f"><span class="n">02</span><h4>Projects</h4><p>Teams and protocols with their own onchain presence.</p></div>
+      <div class="f"><span class="n">03</span><h4>Communities</h4><p>Groups that coordinate around a shared purpose.</p></div>
+      <div class="f"><span class="n">04</span><h4>Assets</h4><p>Tokens, NFTs, and objects that participate in the graph.</p></div>
+      <div class="f"><span class="n">05</span><h4>Agents</h4><p>Autonomous software actors that increasingly act onchain.</p></div>
+    </div>
+
+    <h2>Profiles</h2>
+    <p>Every identity can carry a profile: a participant-controlled set of attributes, links, and proofs. Profiles are the human-readable surface of identity — the part an application renders — while the underlying identity is the durable, addressable root.</p>
+    <div class="codeblock"><span class="c">// conceptual shape of an ORYN identity</span>
+{
+  id:      "base:0xabc…",
+  <span class="k">kind</span>:    "person" | "project" | "community" | "asset" | "agent",
+  profile: { name, avatar, links[], proofs[] },
+  since:   1234567890
+}</div>
+
+    <h2>The registry</h2>
+    <p>Identities are anchored in the ORYN <strong>registry</strong> — the Phase 1 deliverable. The registry is the canonical place to create an identity, attach a profile, and resolve an address to a participant. Because it lives on Base, any application can read from it without asking ORYN for permission.</p>
+
+    <div class="note">
+      <span class="note__k">Design principle</span>
+      <p>Portable by default. An identity created in one context is immediately legible in every other ORYN-aware context — there is no re-onboarding at the border.</p>
+    </div>
+
+    <h2>Why identity comes first</h2>
+    <p>Reputation needs something to attach to. The graph needs nodes to connect. Identity is the substrate both depend on, which is why it is the first primitive ORYN builds after Genesis. Get identity right — persistent, portable, participant-owned — and the rest of the coordination layer has somewhere to stand.</p>
+
+    <h2>Open questions</h2>
+    <ul>
+      <li>How should identities for non-human participants (assets, agents) be created and controlled?</li>
+      <li>What is the right balance between portable profiles and participant privacy?</li>
+      <li>How do recovery and key rotation work without reintroducing a central authority?</li>
+    </ul>
+    <p>These are active research topics. The first track, <a class="inline" href="research-001.html">Research #001 — Identity Systems</a>, explores them in the open.</p>
+  </article>
+
+  <nav class="related">
+    <h2>Continue</h2>
+    <div class="related__grid">
+      <a class="rcard" href="reputation.html"><span class="k">Primitive ii</span><h3>Reputation</h3><p>Trust built through contribution.</p></a>
+      <a class="rcard" href="graph.html"><span class="k">Primitive iii</span><h3>Graph</h3><p>Relationships between participants.</p></a>
+      <a class="rcard" href="research-001.html"><span class="k">Research #001</span><h3>Identity Systems</h3><p>The research behind this primitive.</p></a>
+    </div>
+  </nav>
+</main>
+
+<footer class="footer">
+  <div class="footer__brand">ORYN<span class="nav__dot">●</span></div>
+  <p class="footer__tag">The Coordination Layer for Base.</p>
+  <a href="https://oryn.lat" class="footer__url">oryn.lat</a>
+  <div class="footer__meta"><span>© ORYN</span><span>Building on Base</span></div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Research #002 — Reputation Networks — ORYN</title>
+<meta name="description" content="ORYN Research #002: Reputation Networks. Earned, contextual, decaying trust that travels across the ecosystem." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">ORYN<span class="nav__dot">●</span></a>
+    <nav class="nav__links">
+      <a href="docs.html">Docs</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="identity.html">Identity</a>
+      <a href="reputation.html">Reputation</a>
+      <a href="graph.html">Graph</a>
+      <a href="github.html">Github</a>
+    </nav>
+    <a href="index.html" class="nav__cta">← Home</a>
+  </div>
+</header>
+
+<main class="page">
+  <header class="phead">
+    <div class="breadcrumb"><a href="index.html">ORYN</a> <span>/</span> Research <span>/</span> #002</div>
+    <h1 class="phead__title">Reputation Networks</h1>
+    <p class="phead__lead">How trust is earned through contribution, scoped to context, and allowed to decay — so that a reputation reflects who a participant is now.</p>
+    <div class="phead__meta"><span>Research #002</span><span>Track: Reputation</span><span>Status: open</span></div>
+  </header>
+
+  <article class="prose">
+    <p class="lede">Abstract — Purchasable signals measure capital, not contribution. This track studies reputation as something earned over time, scoped to context, and propagated carefully through a network — a trust signal that is expensive to fake and meaningful to read.</p>
+
+    <h2>Motivation</h2>
+    <p>A coordination layer needs an answer to "can I trust this participant?" that does not collapse into "how much do they hold?" We study how to compute reputation from contribution, how to keep it contextual, and how it can move through the network without becoming noise.</p>
+
+    <h2>Questions</h2>
+    <ul>
+      <li>How do we measure contribution in a way that resists gaming and sybil attacks?</li>
+      <li>What is the right decay function so that reputation tracks present standing?</li>
+      <li>How should trust be scoped — by domain, community, or kind of work?</li>
+      <li>How far should reputation propagate along the graph before it loses meaning?</li>
+    </ul>
+
+    <h2>Approach</h2>
+    <p>We model reputation as a set of <strong>contextual scores</strong> derived from contribution events and peer vouches, with consistency weighted above intensity and a decay that favours recent activity. Reputation is treated as a property of the network, not of an isolated account: vouches are edges, and trust attenuates as it travels.</p>
+    <div class="codeblock"><span class="c">// conceptual — reputation as contextual scores</span>
+reputation(p, ctx) = f(
+  <span class="k">contributions</span>(p, ctx),
+  <span class="k">vouches</span>(p, ctx),
+  <span class="k">decay</span>(time)
+)</div>
+    <table class="spec">
+      <tr><th>Unit of study</th><td>The contextual trust score and its propagation.</td></tr>
+      <tr><th>Feeds primitive</th><td><a class="inline" href="reputation.html">Reputation</a> (Phase 2 — Trust, Contribution).</td></tr>
+      <tr><th>Depends on</th><td><a class="inline" href="identity.html">Identity</a> · <a class="inline" href="graph.html">Graph</a>.</td></tr>
+    </table>
+
+    <div class="note">
+      <span class="note__k">Working claim</span>
+      <p>Trust is contextual and earned. A single global score is both unfaithful and gameable; many scoped, decaying scores are closer to the truth.</p>
+    </div>
+
+    <h2>What it unlocks</h2>
+    <p>Reliable reputation lets applications grant access, weight votes, and surface trustworthy participants without re-vetting everyone from scratch. It is the difference between coordinating with strangers and coordinating with peers.</p>
+
+    <h2>Status</h2>
+    <p>Open. This research informs the Phase 2 reputation system. Drafts are published in the open.</p>
+  </article>
+
+  <nav class="related">
+    <h2>More research</h2>
+    <div class="related__grid">
+      <a class="rcard" href="research-001.html"><span class="k">Research #001</span><h3>Identity Systems</h3><p>What reputation attaches to.</p></a>
+      <a class="rcard" href="research-003.html"><span class="k">Research #003</span><h3>Coordination Graphs</h3><p>How trust travels through structure.</p></a>
+      <a class="rcard" href="reputation.html"><span class="k">Primitive ii</span><h3>Reputation</h3><p>The primitive this research feeds.</p></a>
+    </div>
+  </nav>
+</main>
+
+<footer class="footer">
+  <div class="footer__brand">ORYN<span class="nav__dot">●</span></div>
+  <p class="footer__tag">The Coordination Layer for Base.</p>
+  <a href="https://oryn.lat" class="footer__url">oryn.lat</a>
+  <div class="footer__meta"><span>© ORYN</span><span>Building on Base</span></div>
+</footer>
+</body>
+</html>

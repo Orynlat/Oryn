@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Documentation — ORYN</title>
+<meta name="description" content="ORYN documentation: the coordination layer for Base. Concepts, architecture, primitives, and developer guides." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">ORYN<span class="nav__dot">●</span></a>
+    <nav class="nav__links">
+      <a href="docs.html">Docs</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="identity.html">Identity</a>
+      <a href="reputation.html">Reputation</a>
+      <a href="graph.html">Graph</a>
+      <a href="github.html">Github</a>
+    </nav>
+    <a href="index.html" class="nav__cta">← Home</a>
+  </div>
+</header>
+
+<main class="page">
+  <header class="phead">
+    <div class="breadcrumb"><a href="index.html">ORYN</a> <span>/</span> Documentation</div>
+    <h1 class="phead__title">Documentation</h1>
+    <p class="phead__lead">Everything you need to understand the ORYN coordination layer — the concepts, the architecture, the primitives, and how applications will plug into a shared identity, reputation, and graph fabric on Base.</p>
+    <div class="phead__meta">
+      <span>v0.1 · draft</span>
+      <span>Open research</span>
+      <span>Built on Base</span>
+    </div>
+  </header>
+
+  <article class="prose">
+    <p class="lede">ORYN is a coordination layer for Base. It gives people, projects, communities, assets, and agents a single, portable way to be identified, to earn trust, and to discover one another — so that applications can stop rebuilding the same social plumbing over and over.</p>
+
+    <h2>1. Why a coordination layer?</h2>
+    <p>Today, every onchain application reimplements its own notion of <strong>who you are</strong>, <strong>whether you can be trusted</strong>, and <strong>who you are connected to</strong>. Your identity in one app does not travel to the next. Reputation earned in one community evaporates at the border of another. The result is a fragmented ecosystem where participants are disconnected from the projects and communities that would value them most.</p>
+    <p>ORYN proposes that these three concerns — identity, reputation, and the relationship graph — are not application features. They are <strong>shared infrastructure</strong>. Pulled out into a common layer, they become composable: any app can read them, any contribution can compound, and coordination becomes the default rather than the exception.</p>
+
+    <div class="note">
+      <span class="note__k">In one sentence</span>
+      <p>ORYN is building a coordination layer for Base — a shared fabric of identity, reputation, and graph that ecosystem participants carry with them across every application.</p>
+    </div>
+
+    <h2>2. The three primitives</h2>
+    <p>ORYN is organised around three composable primitives. Each is documented in depth on its own page.</p>
+    <div class="fgrid">
+      <a class="f" href="identity.html" style="text-decoration:none;color:inherit">
+        <span class="n">primitive i</span>
+        <h4>Identity</h4>
+        <p>Persistent participation across applications — one portable presence.</p>
+      </a>
+      <a class="f" href="reputation.html" style="text-decoration:none;color:inherit">
+        <span class="n">primitive ii</span>
+        <h4>Reputation</h4>
+        <p>Trust built through contribution, not purchase. Earned, decaying, contextual.</p>
+      </a>
+      <a class="f" href="graph.html" style="text-decoration:none;color:inherit">
+        <span class="n">primitive iii</span>
+        <h4>Graph</h4>
+        <p>The relationships between every participant in the ecosystem.</p>
+      </a>
+      <div class="f">
+        <span class="n">substrate</span>
+        <h4>Base</h4>
+        <p>ORYN settles on Base — low-cost, high-throughput, and already home to a dense ecosystem.</p>
+      </div>
+    </div>
+
+    <h2>3. How it fits together</h2>
+    <p>An application integrates ORYN the way it would integrate any shared service: it reads a participant's identity, queries their reputation in a relevant context, and walks the graph to find related participants. Crucially, the same participant object is visible to every other ORYN-aware application.</p>
+    <div class="codeblock"><span class="c">// conceptual — the shape of an ORYN read</span>
+const participant = await oryn.identity.<span class="k">resolve</span>("base:0xabc…");
+
+participant.reputation.<span class="k">in</span>("governance");   <span class="c">// contextual score</span>
+participant.graph.<span class="k">neighbors</span>({ edge: "contributor" });
+participant.graph.<span class="k">path</span>(to: "base:0xdef…");   <span class="c">// trust path</span></div>
+    <p>Nothing here is final — ORYN is at the research and documentation stage (Phase 0). The interfaces above describe intent, not a shipped API.</p>
+
+    <h2>4. Getting started</h2>
+    <ol class="steps">
+      <li>
+        <h4>Read the Manifesto</h4>
+        <p>Understand the thesis: the next layer connects participants. <a class="inline" href="manifesto.html">Read it →</a></p>
+      </li>
+      <li>
+        <h4>Study the primitives</h4>
+        <p>Identity, Reputation, and Graph each have a dedicated deep-dive with data models and open questions.</p>
+      </li>
+      <li>
+        <h4>Follow the research</h4>
+        <p>Three research tracks are public. Each becomes a building block of the protocol. <a class="inline" href="research-001.html">Start with #001 →</a></p>
+      </li>
+      <li>
+        <h4>Watch the repositories</h4>
+        <p>oryn-docs, oryn-registry, oryn-graph, and oryn-sdk track the work in the open. <a class="inline" href="github.html">Browse repos →</a></p>
+      </li>
+    </ol>
+
+    <h2>5. Design principles</h2>
+    <table class="spec">
+      <tr><th>Portable by default</th><td>Identity and reputation belong to the participant, not the application. They travel across the whole ecosystem.</td></tr>
+      <tr><th>Earned, not bought</th><td>Reputation reflects contribution over time. It cannot be purchased in a single transaction.</td></tr>
+      <tr><th>Contextual</th><td>Trust is not a single number. A participant can be highly reputable in one context and unknown in another.</td></tr>
+      <tr><th>Composable</th><td>Every primitive is readable by any application. Coordination compounds instead of resetting at each border.</td></tr>
+      <tr><th>Open</th><td>Open infrastructure, open research, open participation. The work happens in public.</td></tr>
+    </table>
+
+    <h2>6. Roadmap at a glance</h2>
+    <p>ORYN ships in phases. Phase 0 (Genesis) covers brand, research, and documentation — the stage you are reading now. Subsequent phases introduce the Identity registry, the Reputation system, the relationship Graph, and finally the Protocol with an SDK and developer APIs.</p>
+    <table class="spec">
+      <tr><th>Phase 0 — Genesis</th><td>Brand · Research · Documentation</td></tr>
+      <tr><th>Phase 1 — Identity</th><td>Registry · Profiles</td></tr>
+      <tr><th>Phase 2 — Reputation</th><td>Trust · Contribution</td></tr>
+      <tr><th>Phase 3 — Graph</th><td>Relationships · Discovery</td></tr>
+      <tr><th>Phase 4 — Protocol</th><td>SDK · Developer APIs</td></tr>
+    </table>
+
+    <h2>7. FAQ</h2>
+    <h3>Is ORYN a token?</h3>
+    <p>No. ORYN is a research initiative building coordination infrastructure. There is nothing to buy here.</p>
+    <h3>Why Base?</h3>
+    <p>Base offers low fees, high throughput, and a large, growing ecosystem of people, projects, and communities — exactly the participants a coordination layer is meant to serve.</p>
+    <h3>How can I participate?</h3>
+    <p>Read the research, follow the repositories, and contribute. ORYN is built in the open, and reputation here is earned through contribution.</p>
+  </article>
+
+  <nav class="related">
+    <h2>Continue</h2>
+    <div class="related__grid">
+      <a class="rcard" href="manifesto.html"><span class="k">Essay</span><h3>The Manifesto</h3><p>What comes next, and why participants are the missing layer.</p></a>
+      <a class="rcard" href="identity.html"><span class="k">Primitive i</span><h3>Identity</h3><p>Persistent participation across applications.</p></a>
+      <a class="rcard" href="github.html"><span class="k">Open source</span><h3>Repositories</h3><p>oryn-docs · registry · graph · sdk</p></a>
+    </div>
+  </nav>
+</main>
+
+<footer class="footer">
+  <div class="footer__brand">ORYN<span class="nav__dot">●</span></div>
+  <p class="footer__tag">The Coordination Layer for Base.</p>
+  <a href="https://oryn.lat" class="footer__url">oryn.lat</a>
+  <div class="footer__meta"><span>© ORYN</span><span>Building on Base</span></div>
+</footer>
+</body>
+</html>

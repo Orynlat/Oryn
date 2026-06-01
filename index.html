@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ORYN — The Coordination Layer for Base</title>
+<meta name="description" content="ORYN is building a coordination layer for Base. Identity. Reputation. Coordination." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Paper grain overlay -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav__inner">
+    <a href="#top" class="nav__logo">ORYN<span class="nav__dot">●</span></a>
+    <nav class="nav__links">
+      <a href="#problem">Problem</a>
+      <a href="#vision">Vision</a>
+      <a href="#primitives">Primitives</a>
+      <a href="#research">Research</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#github">Github</a>
+    </nav>
+    <a href="manifesto.html" class="nav__cta">Manifesto →</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__tag">
+      <span class="dot"></span> An open research initiative
+    </div>
+    <h1 class="hero__title">ORYN</h1>
+    <p class="hero__sub">The Coordination Layer for Base.</p>
+
+    <div class="hero__triplet">
+      <span>Identity.</span>
+      <span>Reputation.</span>
+      <span>Coordination.</span>
+    </div>
+
+    <p class="hero__lead">
+      Building infrastructure for the next generation of onchain applications.
+    </p>
+
+    <div class="hero__actions">
+      <a href="docs.html" class="btn btn--solid">Explore Docs</a>
+      <a href="manifesto.html" class="btn btn--ghost">Read Manifesto</a>
+    </div>
+
+    <div class="hero__sketch" aria-hidden="true">
+      <svg viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="80" cy="100" r="34" class="ink-stroke"/>
+        <circle cx="300" cy="60" r="26" class="ink-stroke"/>
+        <circle cx="520" cy="120" r="40" class="ink-stroke"/>
+        <circle cx="210" cy="150" r="18" class="ink-stroke"/>
+        <circle cx="410" cy="40" r="14" class="ink-stroke"/>
+        <path d="M110 100 C 180 80, 240 70, 274 62" class="ink-line"/>
+        <path d="M324 70 C 380 90, 440 110, 482 116" class="ink-line"/>
+        <path d="M96 130 C 150 160, 180 158, 196 152" class="ink-line"/>
+        <path d="M320 78 C 360 60, 390 50, 398 44" class="ink-line"/>
+        <text x="80" y="105" class="sketch-label">people</text>
+        <text x="300" y="65" class="sketch-label">agents</text>
+        <text x="520" y="125" class="sketch-label">projects</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- SECTION 2 — PROBLEM -->
+  <section class="band" id="problem">
+    <div class="band__head">
+      <span class="kicker">§ 02 — The Problem</span>
+    </div>
+    <div class="problem">
+      <div class="problem__text">
+        <h2 class="display">Today's ecosystems are fragmented.</h2>
+        <ul class="discon">
+          <li>People are disconnected from projects.</li>
+          <li>Projects are disconnected from communities.</li>
+          <li>Communities are disconnected from each other.</li>
+        </ul>
+      </div>
+      <div class="problem__visual">
+        <div class="float-node n1">People</div>
+        <div class="float-node n2">Projects</div>
+        <div class="float-node n3">Communities</div>
+        <div class="float-stamp">Disconnected</div>
+        <svg class="problem__dashes" viewBox="0 0 320 280" aria-hidden="true">
+          <path d="M70 60 L 250 110" class="dash"/>
+          <path d="M250 120 L 90 210" class="dash"/>
+          <path d="M90 70 L 110 200" class="dash"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3 — VISION -->
+  <section class="band band--accent" id="vision">
+    <div class="band__head">
+      <span class="kicker">§ 03 — The Vision</span>
+    </div>
+    <div class="vision">
+      <h2 class="display vision__lead">
+        The future isn't more applications.<br/>
+        <em>The future is better coordination between them.</em>
+      </h2>
+      <div class="chain" aria-label="People, Projects, Communities, Assets, Agents">
+        <div class="chain__node">People</div>
+        <div class="chain__bar"></div>
+        <div class="chain__node">Projects</div>
+        <div class="chain__bar"></div>
+        <div class="chain__node">Communities</div>
+        <div class="chain__bar"></div>
+        <div class="chain__node">Assets</div>
+        <div class="chain__bar"></div>
+        <div class="chain__node">Agents</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 — CORE PRIMITIVES -->
+  <section class="band" id="primitives">
+    <div class="band__head">
+      <span class="kicker">§ 04 — Core Primitives</span>
+      <h2 class="display">Three primitives. One coordination layer.</h2>
+    </div>
+    <div class="prim-grid">
+      <a class="prim" href="identity.html">
+        <div class="prim__num">i.</div>
+        <h3>Identity</h3>
+        <p>Persistent participation across applications.</p>
+        <span class="prim__more">Learn more →</span>
+        <svg class="prim__icon" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="30" r="14" class="ink-stroke"/>
+          <path d="M16 66 C 20 46, 60 46, 64 66" class="ink-stroke"/>
+        </svg>
+      </a>
+      <a class="prim" href="reputation.html">
+        <div class="prim__num">ii.</div>
+        <h3>Reputation</h3>
+        <p>Trust built through contribution.</p>
+        <span class="prim__more">Learn more →</span>
+        <svg class="prim__icon" viewBox="0 0 80 80" aria-hidden="true">
+          <path d="M40 12 L48 32 L70 33 L52 47 L58 68 L40 55 L22 68 L28 47 L10 33 L32 32 Z" class="ink-stroke"/>
+        </svg>
+      </a>
+      <a class="prim" href="graph.html">
+        <div class="prim__num">iii.</div>
+        <h3>Graph</h3>
+        <p>Relationships between ecosystem participants.</p>
+        <span class="prim__more">Learn more →</span>
+        <svg class="prim__icon" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="20" cy="24" r="7" class="ink-stroke"/>
+          <circle cx="60" cy="20" r="7" class="ink-stroke"/>
+          <circle cx="40" cy="58" r="7" class="ink-stroke"/>
+          <path d="M27 27 L 53 23" class="ink-line"/>
+          <path d="M24 31 L 37 51" class="ink-line"/>
+          <path d="M56 26 L 44 51" class="ink-line"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- SECTION 5 — ARCHITECTURE -->
+  <section class="band band--dark" id="architecture">
+    <div class="band__head">
+      <span class="kicker kicker--light">§ 05 — Architecture</span>
+    </div>
+    <div class="arch">
+      <div class="arch__diagram">
+        <div class="arch__core">
+          <span class="arch__core-label">ORYN</span>
+          <ul>
+            <li>Identity</li>
+            <li>Reputation</li>
+            <li>Graph</li>
+          </ul>
+        </div>
+        <div class="arch__spokes">
+          <span>People</span>
+          <span>Projects</span>
+          <span>Communities</span>
+          <span>Assets</span>
+          <span>Agents</span>
+        </div>
+      </div>
+      <p class="arch__text">
+        ORYN provides a shared coordination framework for ecosystem participants.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 6 — RESEARCH -->
+  <section class="band" id="research">
+    <div class="band__head">
+      <span class="kicker">§ 06 — Research</span>
+      <h2 class="display">ORYN is an open research initiative.</h2>
+      <p class="band__intro">We publish research around Identity, Reputation, Coordination, and Network Theory.</p>
+    </div>
+    <div class="res-grid">
+      <a class="res-card" href="research-001.html">
+        <span class="res-card__id">Research #001</span>
+        <h3>Identity Systems</h3>
+        <span class="res-card__more">Read research →</span>
+        <span class="res-card__arrow">↗</span>
+      </a>
+      <a class="res-card" href="research-002.html">
+        <span class="res-card__id">Research #002</span>
+        <h3>Reputation Networks</h3>
+        <span class="res-card__more">Read research →</span>
+        <span class="res-card__arrow">↗</span>
+      </a>
+      <a class="res-card" href="research-003.html">
+        <span class="res-card__id">Research #003</span>
+        <h3>Coordination Graphs</h3>
+        <span class="res-card__more">Read research →</span>
+        <span class="res-card__arrow">↗</span>
+      </a>
+    </div>
+    <div class="res-tags">
+      <span>Identity</span><span>Reputation</span><span>Coordination</span><span>Network Theory</span>
+    </div>
+  </section>
+
+  <!-- SECTION 7 — ROADMAP -->
+  <section class="band band--accent" id="roadmap">
+    <div class="band__head">
+      <span class="kicker">§ 07 — Roadmap</span>
+    </div>
+    <ol class="road">
+      <li class="road__item">
+        <div class="road__phase">Phase 0</div>
+        <h3>Genesis</h3>
+        <ul><li>Brand</li><li>Research</li><li>Documentation</li></ul>
+      </li>
+      <li class="road__item">
+        <div class="road__phase">Phase 1</div>
+        <h3>Identity</h3>
+        <ul><li>Registry</li><li>Profiles</li></ul>
+      </li>
+      <li class="road__item">
+        <div class="road__phase">Phase 2</div>
+        <h3>Reputation</h3>
+        <ul><li>Trust</li><li>Contribution</li></ul>
+      </li>
+      <li class="road__item">
+        <div class="road__phase">Phase 3</div>
+        <h3>Graph</h3>
+        <ul><li>Relationships</li><li>Discovery</li></ul>
+      </li>
+      <li class="road__item">
+        <div class="road__phase">Phase 4</div>
+        <h3>Protocol</h3>
+        <ul><li>SDK</li><li>Developer APIs</li></ul>
+      </li>
+    </ol>
+  </section>
+
+  <!-- SECTION 8 — MANIFESTO -->
+  <section class="band band--dark manifesto" id="manifesto">
+    <div class="band__head">
+      <span class="kicker kicker--light">§ 08 — Manifesto</span>
+    </div>
+    <div class="manifesto__lines">
+      <p>The internet connected <em>information</em>.</p>
+      <p>Blockchains connected <em>assets</em>.</p>
+      <p>The next layer connects <em>participants</em>.</p>
+      <p class="manifesto__close">ORYN is exploring what comes next.</p>
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <a href="manifesto.html" class="btn btn--ghost" style="border-color:var(--bg);color:var(--bg)">Read the full manifesto →</a>
+    </div>
+  </section>
+
+  <!-- SECTION 9 — GITHUB -->
+  <section class="band" id="github">
+    <div class="band__head">
+      <span class="kicker">§ 09 — Github</span>
+      <h2 class="display">Open infrastructure.</h2>
+    </div>
+    <div class="repos">
+      <a class="repo" href="github.html#oryn-docs"><span class="repo__icon">/</span> oryn-docs</a>
+      <a class="repo" href="github.html#oryn-registry"><span class="repo__icon">/</span> oryn-registry</a>
+      <a class="repo" href="github.html#oryn-graph"><span class="repo__icon">/</span> oryn-graph</a>
+      <a class="repo" href="github.html#oryn-sdk"><span class="repo__icon">/</span> oryn-sdk</a>
+    </div>
+    <div class="repos__motto">
+      <span>Open infrastructure.</span>
+      <span>Open research.</span>
+      <span>Open participation.</span>
+    </div>
+    <div style="margin-top:36px;display:flex;gap:14px;flex-wrap:wrap">
+      <a href="github.html" class="btn btn--solid">View all repositories →</a>
+      <a href="docs.html" class="btn btn--ghost">Explore docs</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- SECTION 10 — FOOTER -->
+<footer class="footer">
+  <div class="footer__brand">ORYN<span class="nav__dot">●</span></div>
+  <p class="footer__tag">The Coordination Layer for Base.</p>
+  <a href="https://oryn.lat" class="footer__url">oryn.lat</a>
+  <div class="footer__meta">
+    <span>© ORYN</span>
+    <span>Building on Base</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

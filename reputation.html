@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Reputation — ORYN Primitive ii</title>
+<meta name="description" content="ORYN Reputation: trust built through contribution. Earned, contextual, decaying — never bought." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">ORYN<span class="nav__dot">●</span></a>
+    <nav class="nav__links">
+      <a href="docs.html">Docs</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="identity.html">Identity</a>
+      <a href="reputation.html">Reputation</a>
+      <a href="graph.html">Graph</a>
+      <a href="github.html">Github</a>
+    </nav>
+    <a href="index.html" class="nav__cta">← Home</a>
+  </div>
+</header>
+
+<main class="page">
+  <header class="phead">
+    <div class="breadcrumb"><a href="index.html">ORYN</a> <span>/</span> <a href="docs.html">Primitives</a> <span>/</span> Reputation</div>
+    <h1 class="phead__title">Reputation</h1>
+    <p class="phead__lead">Trust built through contribution. A reputation you earn over time and carry across the ecosystem — never something you can buy in a single transaction.</p>
+    <div class="phead__meta"><span>Primitive ii</span><span>Phase 2</span><span>Trust · Contribution</span></div>
+  </header>
+
+  <article class="prose">
+    <p class="lede">If identity answers <em>who</em>, reputation answers <em>whether to trust</em>. It is the memory of the coordination layer — the record that contribution leaves behind.</p>
+
+    <h2>Trust is earned, not purchased</h2>
+    <p>Most onchain signals of standing can be bought: a token balance, a rare NFT, a follower count. They measure capital, not contribution. ORYN reputation is different by design — it accrues from what a participant <strong>does</strong>, over time, and it cannot be acquired in a single payment.</p>
+    <p>This makes reputation expensive to fake and meaningful to read. An application that asks "can I trust this participant?" gets an answer grounded in history, not in a snapshot of someone's wallet.</p>
+
+    <div class="note">
+      <span class="note__k">Design principle</span>
+      <p>Earned, not bought. Reputation reflects contribution accumulated over time and is resistant to purchase, transfer, or sudden inflation.</p>
+    </div>
+
+    <h2>Reputation is contextual</h2>
+    <p>Trust is not a single number. A participant might be deeply trusted in governance and unknown in design; a prolific contributor to one community and a newcomer to another. ORYN models reputation as <strong>contextual</strong> — scoped to a domain, a community, or a kind of contribution — rather than collapsing everything into one global score that means nothing everywhere.</p>
+    <div class="codeblock"><span class="c">// conceptual — contextual reputation reads</span>
+participant.reputation.<span class="k">in</span>("governance");     <span class="c">// high</span>
+participant.reputation.<span class="k">in</span>("design");         <span class="c">// unknown</span>
+participant.reputation.<span class="k">in</span>("community:base"); <span class="c">// rising</span></div>
+
+    <h2>Contribution as the source</h2>
+    <p>Reputation is computed from contribution events: shipped work, governance participation, sustained community presence, vouches from already-trusted participants. The system favours <strong>consistency over intensity</strong> — a steady record outweighs a single burst — and it lets trust <strong>decay</strong> gently, so that reputation reflects who a participant is now, not only who they once were.</p>
+    <table class="spec">
+      <tr><th>Accrues from</th><td>Contribution, sustained participation, and vouches from trusted peers.</td></tr>
+      <tr><th>Scoped by</th><td>Context — domain, community, or kind of work.</td></tr>
+      <tr><th>Resists</th><td>Purchase, transfer, and sudden inflation.</td></tr>
+      <tr><th>Decays</th><td>Gradually, so it tracks present standing, not only past glory.</td></tr>
+    </table>
+
+    <h2>Why it depends on identity and the graph</h2>
+    <p>Reputation attaches to an <a class="inline" href="identity.html">identity</a> and flows along the <a class="inline" href="graph.html">graph</a>. Vouches are edges; contexts are clusters; trust can propagate — carefully — between connected participants. This is why reputation is the second primitive: it needs identity beneath it and the graph beside it.</p>
+
+    <h2>Open questions</h2>
+    <ul>
+      <li>How do we measure contribution without making it gameable?</li>
+      <li>What is the right decay function for trust across different contexts?</li>
+      <li>How far should reputation propagate along the graph before it becomes noise?</li>
+    </ul>
+    <p>These questions drive <a class="inline" href="research-002.html">Research #002 — Reputation Networks</a>.</p>
+  </article>
+
+  <nav class="related">
+    <h2>Continue</h2>
+    <div class="related__grid">
+      <a class="rcard" href="graph.html"><span class="k">Primitive iii</span><h3>Graph</h3><p>Relationships between participants.</p></a>
+      <a class="rcard" href="identity.html"><span class="k">Primitive i</span><h3>Identity</h3><p>What reputation attaches to.</p></a>
+      <a class="rcard" href="research-002.html"><span class="k">Research #002</span><h3>Reputation Networks</h3><p>The research behind this primitive.</p></a>
+    </div>
+  </nav>
+</main>
+
+<footer class="footer">
+  <div class="footer__brand">ORYN<span class="nav__dot">●</span></div>
+  <p class="footer__tag">The Coordination Layer for Base.</p>
+  <a href="https://oryn.lat" class="footer__url">oryn.lat</a>
+  <div class="footer__meta"><span>© ORYN</span><span>Building on Base</span></div>
+</footer>
+</body>
+</html>

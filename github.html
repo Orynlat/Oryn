@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Repositories — ORYN</title>
+<meta name="description" content="ORYN open-source repositories: oryn-docs, oryn-registry, oryn-graph, oryn-sdk. Open infrastructure, open research, open participation." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">ORYN<span class="nav__dot">●</span></a>
+    <nav class="nav__links">
+      <a href="docs.html">Docs</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="identity.html">Identity</a>
+      <a href="reputation.html">Reputation</a>
+      <a href="graph.html">Graph</a>
+      <a href="github.html">Github</a>
+    </nav>
+    <a href="index.html" class="nav__cta">← Home</a>
+  </div>
+</header>
+
+<main class="page">
+  <header class="phead">
+    <div class="breadcrumb"><a href="index.html">ORYN</a> <span>/</span> Repositories</div>
+    <h1 class="phead__title">Repositories</h1>
+    <p class="phead__lead">Open infrastructure. Open research. Open participation. The coordination layer is built in public — four repositories track the work as it happens.</p>
+    <div class="phead__meta"><span>Open source</span><span>Built on Base</span><span>Phase 0 → 4</span></div>
+  </header>
+
+  <article class="prose">
+    <p class="lede">ORYN develops in the open. Each primitive has a home in source control, and the documentation that explains it lives alongside the code. Reputation here is earned the same way it is everywhere in ORYN — through contribution.</p>
+
+    <h2 id="oryn-docs">oryn-docs</h2>
+    <p>The canonical documentation and research repository. It holds the manifesto, the concept reference, the primitive deep-dives, and the open research tracks. If you want to understand ORYN, start here.</p>
+    <table class="spec">
+      <tr><th>Purpose</th><td>Documentation, research notes, and specifications.</td></tr>
+      <tr><th>Phase</th><td>0 — Genesis (active).</td></tr>
+      <tr><th>Read alongside</th><td><a class="inline" href="docs.html">Documentation</a> · <a class="inline" href="manifesto.html">Manifesto</a></td></tr>
+    </table>
+
+    <h2 id="oryn-registry">oryn-registry</h2>
+    <p>The identity registry — the onchain home for participant identities and profiles on Base. The registry is where an identity is created, a profile is attached, and an address is resolved to a participant. It is the foundation the other primitives build on.</p>
+    <table class="spec">
+      <tr><th>Purpose</th><td>Onchain identity creation, profiles, and resolution.</td></tr>
+      <tr><th>Phase</th><td>1 — Identity.</td></tr>
+      <tr><th>Implements</th><td><a class="inline" href="identity.html">Identity</a> · <a class="inline" href="research-001.html">Research #001</a></td></tr>
+    </table>
+
+    <h2 id="oryn-graph">oryn-graph</h2>
+    <p>The relationship graph — typed, directional edges between identities, plus the queries that make discovery possible: neighbors, paths, clusters, and bridges. This is where reputation propagation and discovery come to life.</p>
+    <table class="spec">
+      <tr><th>Purpose</th><td>The shared coordination graph and discovery queries.</td></tr>
+      <tr><th>Phase</th><td>3 — Graph.</td></tr>
+      <tr><th>Implements</th><td><a class="inline" href="graph.html">Graph</a> · <a class="inline" href="research-003.html">Research #003</a></td></tr>
+    </table>
+
+    <h2 id="oryn-sdk">oryn-sdk</h2>
+    <p>The developer toolkit — the libraries and APIs that let any application read identity, query reputation, and walk the graph. The SDK is how the coordination layer reaches the applications that will use it.</p>
+    <table class="spec">
+      <tr><th>Purpose</th><td>Client libraries and developer APIs for integrators.</td></tr>
+      <tr><th>Phase</th><td>4 — Protocol.</td></tr>
+      <tr><th>Surfaces</th><td><a class="inline" href="identity.html">Identity</a> · <a class="inline" href="reputation.html">Reputation</a> · <a class="inline" href="graph.html">Graph</a></td></tr>
+    </table>
+
+    <div class="note">
+      <span class="note__k">Status</span>
+      <p>ORYN is at Phase 0. The registry, graph, and SDK describe planned work; oryn-docs is where the current, public output lives. Links to live source will be published as each repository opens.</p>
+    </div>
+
+    <h2>How to participate</h2>
+    <ol class="steps">
+      <li><h4>Read</h4><p>Begin with the <a class="inline" href="docs.html">documentation</a> and the <a class="inline" href="manifesto.html">manifesto</a>.</p></li>
+      <li><h4>Study the research</h4><p>The three tracks define the open problems ORYN is working through.</p></li>
+      <li><h4>Contribute</h4><p>Open infrastructure means anyone can build on it and help shape it. Contribution is how reputation is earned.</p></li>
+    </ol>
+  </article>
+
+  <nav class="related">
+    <h2>Continue</h2>
+    <div class="related__grid">
+      <a class="rcard" href="docs.html"><span class="k">Reference</span><h3>Documentation</h3><p>Concepts, architecture, developer model.</p></a>
+      <a class="rcard" href="research-001.html"><span class="k">Research</span><h3>Research tracks</h3><p>Identity, reputation, and coordination.</p></a>
+      <a class="rcard" href="manifesto.html"><span class="k">Essay</span><h3>The Manifesto</h3><p>Why participants are the next layer.</p></a>
+    </div>
+  </nav>
+</main>
+
+<footer class="footer">
+  <div class="footer__brand">ORYN<span class="nav__dot">●</span></div>
+  <p class="footer__tag">The Coordination Layer for Base.</p>
+  <a href="https://oryn.lat" class="footer__url">oryn.lat</a>
+  <div class="footer__meta"><span>© ORYN</span><span>Building on Base</span></div>
+</footer>
+</body>
+</html>

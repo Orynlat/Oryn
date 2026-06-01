@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Graph — ORYN Primitive iii</title>
+<meta name="description" content="ORYN Graph: the relationships between ecosystem participants. A shared, legible map of how Base coordinates." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">ORYN<span class="nav__dot">●</span></a>
+    <nav class="nav__links">
+      <a href="docs.html">Docs</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="identity.html">Identity</a>
+      <a href="reputation.html">Reputation</a>
+      <a href="graph.html">Graph</a>
+      <a href="github.html">Github</a>
+    </nav>
+    <a href="index.html" class="nav__cta">← Home</a>
+  </div>
+</header>
+
+<main class="page">
+  <header class="phead">
+    <div class="breadcrumb"><a href="index.html">ORYN</a> <span>/</span> <a href="docs.html">Primitives</a> <span>/</span> Graph</div>
+    <h1 class="phead__title">Graph</h1>
+    <p class="phead__lead">The relationships between ecosystem participants. A shared, legible map of how people, projects, communities, assets, and agents connect on Base.</p>
+    <div class="phead__meta"><span>Primitive iii</span><span>Phase 3</span><span>Relationships · Discovery</span></div>
+  </header>
+
+  <article class="prose">
+    <p class="lede">Identity gives us nodes. Reputation gives those nodes weight. The graph is what connects them — the structure that turns a crowd of participants into an ecosystem.</p>
+
+    <h2>Relationships as infrastructure</h2>
+    <p>Every application today rebuilds its own social graph: follows, members, contributors, holders. None of these graphs talk to each other, so the rich web of relationships that actually exists across Base is invisible to any single app. ORYN lifts the graph into shared infrastructure — one map that any application can read and contribute to.</p>
+
+    <h2>Nodes and edges</h2>
+    <p>Nodes are <a class="inline" href="identity.html">identities</a>: people, projects, communities, assets, agents. Edges are the relationships between them — typed, directional, and meaningful.</p>
+    <div class="codeblock"><span class="c">// conceptual — edges in the ORYN graph</span>
+person   ──<span class="k">contributes_to</span>──▶ project
+project  ──<span class="k">belongs_to</span>─────▶ community
+person   ──<span class="k">vouches_for</span>────▶ person
+agent    ──<span class="k">operates</span>───────▶ asset
+community ──<span class="k">collaborates</span>──▶ community</div>
+    <p>Because edges are typed, the graph can answer specific questions — not just "are these two connected?" but "how, and through whom?"</p>
+
+    <h2>Discovery</h2>
+    <p>A shared graph makes <strong>discovery</strong> a first-class capability. Find the contributors a project should know. Find the communities adjacent to yours. Find a trust path between two strangers. Discovery is the Phase 3 promise: coordination becomes possible because participants can finally <em>find</em> each other.</p>
+    <div class="fgrid">
+      <div class="f"><h4>Neighbors</h4><p>Who is one hop away, by a given edge type.</p></div>
+      <div class="f"><h4>Paths</h4><p>How two participants connect, and how much trust the path carries.</p></div>
+      <div class="f"><h4>Clusters</h4><p>The communities and scenes that form naturally in the structure.</p></div>
+      <div class="f"><h4>Bridges</h4><p>The participants who connect otherwise-separate parts of the ecosystem.</p></div>
+    </div>
+
+    <h2>The graph carries trust</h2>
+    <p>The graph and <a class="inline" href="reputation.html">reputation</a> are inseparable. Vouches are edges; trust propagates along paths; reputation is, in part, a property of where you sit in the structure. A well-formed graph lets trust travel exactly as far as it should — and no further.</p>
+
+    <div class="note">
+      <span class="note__k">Design principle</span>
+      <p>Composable. The graph is readable by any ORYN-aware application, so relationships compound across the ecosystem instead of resetting inside every app.</p>
+    </div>
+
+    <h2>Open questions</h2>
+    <ul>
+      <li>Which edge types are primitive, and which can be derived?</li>
+      <li>How should the graph balance openness with participant control over visibility?</li>
+      <li>How does trust attenuate along a path without losing its signal?</li>
+    </ul>
+    <p>These drive <a class="inline" href="research-003.html">Research #003 — Coordination Graphs</a>.</p>
+  </article>
+
+  <nav class="related">
+    <h2>Continue</h2>
+    <div class="related__grid">
+      <a class="rcard" href="identity.html"><span class="k">Primitive i</span><h3>Identity</h3><p>The nodes of the graph.</p></a>
+      <a class="rcard" href="reputation.html"><span class="k">Primitive ii</span><h3>Reputation</h3><p>The weight the graph carries.</p></a>
+      <a class="rcard" href="research-003.html"><span class="k">Research #003</span><h3>Coordination Graphs</h3><p>The research behind this primitive.</p></a>
+    </div>
+  </nav>
+</main>
+
+<footer class="footer">
+  <div class="footer__brand">ORYN<span class="nav__dot">●</span></div>
+  <p class="footer__tag">The Coordination Layer for Base.</p>
+  <a href="https://oryn.lat" class="footer__url">oryn.lat</a>
+  <div class="footer__meta"><span>© ORYN</span><span>Building on Base</span></div>
+</footer>
+</body>
+</html>
